@@ -27,12 +27,12 @@ First the machine code is built (Portable file), then it is executed in the CPU.
 Execution could happen way after code compilation.
 
 Two steps:
-* Source code -> (Compilation) -> Portable file -> (Ececution) -> Program running
+* Source code -> (Compilation) -> Portable file -> (Execution) -> Program running
 
 **Interpretation** - Interpreter runs through the source code and executes each line one by one.
 
 One step (_code still needs to be converted into machine code_):
-* Source code -> (Ececution line by line) -> Program running
+* Source code -> (Execution line by line) -> Program running
 
 Compiled languages are much faster than Interpreted languages.
 
@@ -41,7 +41,7 @@ Modern JavaScript is using **mix** between interpretation and compilation - it i
 **JIT** - Entire code is converted into machine code at once, then executed immediately (**NO PORTABLE FILE**).
 
 Two steps:
-* Source code -> (Compilation) -> Machine code -> (Ececution) -> Program running
+* Source code -> (Compilation) -> Machine code -> (Execution) -> Program running
 
 ![screen-01.png](screen-01.png)
 

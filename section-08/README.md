@@ -8,8 +8,8 @@
 - Multi-paradigm language. Procedural programming, **OOP programming**, **Functional programming**.
 - Proto-type-based object-oriented language. Almost everything is an object in JavaScript.
 - **First-class functions** - Functions are treated like any other variables. We can pass them to other functions as arguments or return them from other functions.
-- **Dynamic typing** - We don't have to declare the type of a variable. Instead, they will be known only when JS engine executes our code.
-- **Single-threaded**.
+- **Dynamic typing** - We don't have to declare the type of a variable. Instead, they will be known only when JavaScript engine executes our code.
+- **Single-threaded** - No multitasking.
 - **Non-blocking** event loop.
 
 ## JavaScript Engine and Runtime

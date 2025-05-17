@@ -57,5 +57,22 @@ JavaScript Engine includes:
 
 ![screen-02.png](screen-02.png)
 
-### Title
+### Execution Context
 
+The first thing that happens after our code is compiled, is creation of **global execution context** (for top-level code).
+
+Execution context is an environment where piece of JavaScript code is executed. It stores all the necessary information needed for some code to be executed (variables, or argument passed to the function, etc...).
+
+There is **always** only **ONE** global execution context. Each function gets its **own execution context** as soon as function got called.
+
+1. Variable Environment:
+- `let`, `const` and `var` declaration;
+- Function;
+- `arguments` object.
+2. Scope Chain;
+3. `this` keyword;
+
+These are generated during "creation phase", right before execution. `this` keyword and `arguments` object are **NOT** belong to the arrow functions.
+
+**Creation phase** and **Execution phase**. Core runs in the code stack.
+Closing browser window, this way we are closing the execution context as well.

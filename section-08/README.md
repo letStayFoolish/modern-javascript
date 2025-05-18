@@ -101,3 +101,5 @@ Scopes look up in the scope chain for the variable until they find the variable 
 
 ![screen-04.png](screen-04.png)
 
+Scope is **a one-way** street!
+

@@ -1,3 +1,5 @@
+"use strict"
+
 console.log('Happy developing ✨');
 const myName = 'Nemanja'; // global EC
 

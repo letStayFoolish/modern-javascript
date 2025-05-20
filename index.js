@@ -1,4 +1,4 @@
-"use strict"
+'use strict';
 
 console.log('Happy developing ✨');
 const myName = 'Nemanja'; // global EC
@@ -24,3 +24,30 @@ const outer = function (value) {
 outer(22);
 
 const x = outer();
+
+// Scoping in action
+// function declaration
+function calcAge(birthYear) {
+    const age = 2025 - birthYear;
+    const lastName = 'Garmaev';
+    console.log('calcAge scope: ' + lastName); // lookup in the global scope
+
+    function printAge() {
+        var isVisible = true; // function scoped
+        const str = `${lastName}, you are ${age} years old.`; // lastName - global scope; age - calcAge scope
+        console.log(str);
+    }
+
+    // console.log(isVisible); // Uncaught ReferenceError: isVisible is not defined
+    // console.log(str); // ReferenceError: str is not defined
+
+    printAge();
+
+    return age;
+}
+
+// printAge(); // functions are also block-scoped! (if "strict mode" is on)
+
+const lastName = 'Karaklajic';
+console.log('global scope: ' + lastName); // global scope
+calcAge(1990);

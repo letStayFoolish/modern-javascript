@@ -103,3 +103,18 @@ Scopes look up in the scope chain for the variable until they find the variable 
 
 Scope is **a one-way** street!
 
+### Hoisting in JavaScript
+
+**Hoisting** makes some types of variables accessible/usable in the code before they are declared.
+
+Behind the scenes, **Before execution** code is scanned for variable declarations, and for each variable, a new property is created in the **variable environment object**.
+
+**Function declarations**: We **CAN** use function declarations before they are actually declared in the code. Block-scoped.
+
+**`var` variables**: If we try to use variables declared using `var` before they are declared, we get `undefined` error. This is why we almost never use `var` variables. Function-scoped.
+
+**`let` and `const` variables**: They are not hoisted (error: `uninitialized variable`). Placed in _temporal dead zone_. Block-scoped
+
+**function expressions and arrow functions**: If created using `var` it is hoisted to `undefined`,but if created using `let` or `const`, it is not usable before they are declared in the code (TDZ).
+
+**Temporal Dead Zone** is a special region of memory where we can't access any variables. Starts from where variable is called (where we try to use it before its declaration) and ents where we actually declared that variable in the code.    

@@ -120,3 +120,19 @@ Behind the scenes, **Before execution** code is scanned for variable declaration
 **Temporal Dead Zone** is a special region of memory where we can't access any variables. Starts from where variable is called (where we try to use it before its declaration) and ends where we actually declared that variable in the code.
 
 Variables declared with `var` will create properties in global `window` object.
+
+### The `this`-keyword
+
+It Is basically a special variable that is created for every execution context and therefore every function. It points to the owner of the function.
+
+`this` is **NOT** static. Depends on **how** the function is called, and its value is only assigned when the function **is actually called**.
+
+- **Method**: `this` points to Object that calls the method;
+
+- **Simple function call**: `this` points to `undefined` (in case that `"strict mode"` is off, then it points to global `window` object in browser);
+- **Arrow functions**: `this` points to the surrounding function (lexical `this`). Arrow functions don't get own `this`;
+- **Event listener**: `this` will always point to the DOM element that handler is attached to.
+
+
+
+

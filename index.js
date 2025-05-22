@@ -55,8 +55,8 @@ calcAge(1990);
 
 // Hoisting and TDZ
 console.log(addDecl(25)); // 30
-console.log(addExpression(32)); // ReferenceError: Cannot access 'addExpression' before initialization
-console.log(addArrow(7)); // ReferenceError: Cannot access 'addArrow' before initialization
+// console.log(addExpression(32)); // ReferenceError: Cannot access 'addExpression' before initialization
+// console.log(addArrow(7)); // ReferenceError: Cannot access 'addArrow' before initialization
 
 // Function Declaration
 function addDecl (value) {
@@ -73,3 +73,10 @@ const addArrow = (value) => {
     let res = 5;
     return res += value;
 }
+
+function testingThisKeyword () {
+    console.log(this) // undefined
+}
+
+testingThisKeyword();
+

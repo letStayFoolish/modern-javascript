@@ -79,4 +79,42 @@ function testingThisKeyword () {
 }
 
 testingThisKeyword();
+console.log(this)
+
+const arrowThisKeyword = () => {
+    console.log(4 + 5);
+    console.log(this) // Lexical - `window` object;
+}
+function testDeclThis () {
+    console.log("Testing `this` keyword calling arrow func within the function declaration.")
+    const arr = () => {
+        console.log(this)
+    };
+    arr(); // undefined
+};
+
+arrowThisKeyword();
+testDeclThis();
+
+
+const chili = {
+    firstName: "Nemanja",
+    logName: function () {
+        console.log(this);
+        console.log(this.firstName)
+    }
+}
+
+chili.logName(); // "Nemanja"
+
+const ira = {
+    firstName: "Irina",
+}
+
+// `this`-keyword is dynamic and it depends on how the function is called!!!
+ira.logName = chili.logName;
+ira.logName(); // "Irina"
+
+const fu = chili.logName;
+fu(); // undefined -> Error: Cannot read properties of undefined (reading 'firstName') => undefined.logName();
 

@@ -117,4 +117,6 @@ Behind the scenes, **Before execution** code is scanned for variable declaration
 
 **function expressions and arrow functions**: If created using `var` it is hoisted to `undefined`,but if created using `let` or `const`, it is not usable before they are declared in the code (TDZ).
 
-**Temporal Dead Zone** is a special region of memory where we can't access any variables. Starts from where variable is called (where we try to use it before its declaration) and ents where we actually declared that variable in the code.    
+**Temporal Dead Zone** is a special region of memory where we can't access any variables. Starts from where variable is called (where we try to use it before its declaration) and ends where we actually declared that variable in the code.
+
+Variables declared with `var` will create properties in global `window` object.

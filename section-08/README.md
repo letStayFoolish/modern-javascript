@@ -133,6 +133,79 @@ It Is basically a special variable that is created for every execution context a
 - **Arrow functions**: `this` points to the surrounding function (lexical `this`). Arrow functions don't get own `this`;
 - **Event listener**: `this` will always point to the DOM element that handler is attached to.
 
+### Memory Management
+
+Is how the JavaScript engine allocates space in memory to create variables (and objects) and how it frees up the space, which is taken by these variables and objects when they are not needed anymore.
+
+**How** and **where** are variables created in JavaScript. **Memory is automatically managed** by the JavaScript behind the scenes.
 
 
+#### Allocate memory
+👉🏻 Whenever we assign the value to a new variable, the JavaScript engine automatically allocate (_reserve_) a **piece of memory to store the value**.
 
+`let num = 23.4`
+
+#### Use memory
+
+👉🏻 While code is running, **the value is written, read and updated** in the allocated piece of memory.
+```js
+num += 4;
+calc(num);
+```
+
+#### Release memory
+
+👉🏻 WHen no longer needed, **the value is deleted from memory** to free up resources. The released memory is used for new variables.
+`num is removed from memory`
+
+**Primitives** (also the references to objects) are allocated in the **CALL STACK**
+
+**Objects** are allocated in the **Memory Heap**.
+
+The variables (`location`) in the Call Stack DON'T hold objects but the **references (memory address) pointing to the objects values in the Memory Heap**.
+```js
+const location = {
+    city: "Novi Sad",
+    zipCode: "21000"
+};
+```
+
+### Object References
+#### Shallow vs Deep copy
+
+**SHALLOW COPY**
+```js
+const personOne = {
+    firstName: "Nemanja",
+    lastName: "Karaklajic",
+    birthYear: 1990
+};
+
+const personTwo = {...personOne};
+personTwo.firstName = "Irina"
+
+// 🚫 personTwo = { x: 20 }; // not allowed if personTwo is defined using const!
+
+console.log(); // { firstName: "Nemanja", lastName: "Karaklajic", birthYear: 1990 };
+console.log(); // { firstName: "Irina", lastName: "Karaklajic", birthYear: 1990 };
+```
+
+Using spread operator `...` we are creating a completely **NEW** object.
+
+
+**DEEP COPY** - for nested objects/arrays
+
+```js
+const personOne = {
+    firstName: "Nemanja",
+    lastName: "Karaklajic",
+    birthYear: 1990
+};
+
+const personClone = structuredClone(personOne);
+personClone.firstName = "Jelena";
+
+console.log("After: ", personClone);
+console.log("Before: ", personOne);
+
+```

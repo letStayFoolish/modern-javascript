@@ -115,6 +115,20 @@ const ira = {
 ira.logName = chili.logName;
 ira.logName(); // "Irina"
 
-const fu = chili.logName;
-fu(); // undefined -> Error: Cannot read properties of undefined (reading 'firstName') => undefined.logName();
 
+
+const fu = chili.logName;
+// fu(); // undefined -> Error: Cannot read properties of undefined (reading 'firstName') => undefined.logName();
+
+// Deep/clone
+const personOne = {
+    firstName: "Nemanja",
+    lastName: "Karaklajic",
+    birthYear: 1990
+};
+
+const personClone = structuredClone(personOne);
+personClone.firstName = "Jelena";
+
+console.log("Before: ", personOne);
+console.log("After: ", personClone);

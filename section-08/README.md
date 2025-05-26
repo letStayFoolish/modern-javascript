@@ -155,7 +155,7 @@ calc(num);
 
 #### Release memory
 
-👉🏻 WHen no longer needed, **the value is deleted from memory** to free up resources. The released memory is used for new variables.
+👉🏻 When no longer needed, **the value is deleted from memory** to free up resources. The released memory is used for new variables.
 `num is removed from memory`
 
 **Primitives** (also the references to objects) are allocated in the **CALL STACK**
@@ -207,5 +207,56 @@ personClone.firstName = "Jelena";
 
 console.log("After: ", personClone);
 console.log("Before: ", personOne);
-
 ```
+### Garbage Collection
+
+Variable environment is **simply deleted when Execution Context pops off stack**.
+
+It is the **engine** that runes garbage collection automatically.
+
+**Mark-And-Sweep** algorithm.
+
+**Memory Leak**: When objects that are no longer needed are **incorrectly still reachable**, and therefore **not garbage collected**. Good examples are: Event listeners, timers, etc...
+
+### Regular vs. Arrow Functions
+
+`this`-keyword.
+
+```js
+const person = {
+    firstName: "Nemanja",
+    lastName: "Karaklajic",
+    birthYear: 1990,
+    calcAge: function () {
+        const res = 2025 - this.birthYear
+        console.log(res); // 35
+        
+        const logThis = () => {
+            console.log(this); // Arrow functions don't have their `this`-keyword, so it looks up to the parent which is calcAge. calcAge has its `this` -> person;
+        };
+        
+        logThis();
+    }
+};
+
+// The (problem) example with arrow function:
+const person = {
+    firstName: "Nemanja",
+    lastName: "Karaklajic",
+    birthYear: 1990,
+    calcAge: () => {
+        const res = 2025 - this.birthYear
+        console.log(this); // Window {...}
+        console.log(res); // Error: NaN; window.birthYear - undefined 
+        
+        const isThisCorrect = function () {
+            console.log(`isThisCorrect logging: ${this.firstName}`);
+        };
+        
+        isThisCorrect();
+    }
+    
+};
+```
+
+**You should never us an arrow function as a method (inside an object). Instead, use regular (declared) function.**

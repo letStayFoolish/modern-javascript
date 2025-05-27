@@ -1,5 +1,8 @@
 'use strict';
+import * as CoreJS from 'core-js';
 console.log('Happy developing ✨');
+
+const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
 
 const logThis = () => {
     console.log('This: ', this);
@@ -7,12 +10,12 @@ const logThis = () => {
 
 logThis();
 const fetchData = async () => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const response = await fetch(POSTS_URL);
     const data = await response.json();
     return data;
 };
 
-const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+const response = await fetch(POSTS_URL);
 const data = await response.json();
 console.log(data);
 console.log('Something');

@@ -91,3 +91,39 @@ Instead of using bunch of plugins for each feature, Babel uses **presets**.
 * When possible, run promises in **parallel** with `Promise.all`;
 * Handle errors and promises rejections;
 
+### Imperative vs Declarative Code
+
+**Imperative** programmers explain **"HOW to do things"**.
+We explain the computer *every single step* it has to follow to achieve a result.
+
+**Declarative** programmers tell **"WHAT to do"**. We simply describe the way the computer should achieve the result. The **HOW** gets abstracted away.
+
+```js
+const arr = [1, 2, 3, 4];
+const doubled = [];
+
+// Imperative:
+for(let i = 0; i < arr.length; i++){
+    doubled[i] = arr[i] * 2;
+}
+// Declarative:
+doubled = arr.map((i) => i * 2);
+```
+### Functional Programming (Declarative Paradigm)
+
+Combining many **pure functions**, avoiding **side effects** and **mutating** data.
+
+**Side effect**: Mutation of any data that is **outside** the function (logging to the console, writing to DOM, etc...).
+
+**Pure functions**: Functions without side effects.
+
+**Immutability**: State (data) is **never** modified. Instead, state is **copied** and the copy is mutated and returned. (in React state is completely immutable).
+
+**Avoid data transformations** (use `map()`, `filter()` and `reduce()`).
+
+#### Declarative Syntax
+
+* Use object and array destructuring;
+* Use spread operator (...);
+* Use ternary operators;
+* Use template literals.

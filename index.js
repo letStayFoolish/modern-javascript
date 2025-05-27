@@ -1,5 +1,4 @@
 'use strict';
-import * as CoreJS from 'core-js';
 console.log('Happy developing ✨');
 
 const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
@@ -27,3 +26,7 @@ console.log(newData.at(-1)); // 98
 
 const fetchedData = await fetchData();
 console.log('Fetched title: ', fetchedData.at(1).title);
+
+const limit = newData?.at(3) ?? 0;
+
+console.log({ limit });

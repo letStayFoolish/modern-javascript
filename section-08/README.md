@@ -65,7 +65,7 @@ Execution context is an environment where piece of JavaScript code is executed. 
 
 There is **always** only **ONE** global execution context. Each function gets its **own execution context** as soon as function got called.
 
-#### Each Execution context has: 
+#### Each Execution context has:
 1. Variable Environment:
    - `let`, `const` and `var` declaration;
    - Function;
@@ -73,10 +73,10 @@ There is **always** only **ONE** global execution context. Each function gets it
 2. Scope Chain;
 3. `this` keyword;
 
-These are generated during "creation phase", right before execution. `this` keyword and `arguments` object are **NOT** belong to the arrow functions.
+These are generated during "creation phase", right before execution. `this` keyword and `arguments` object do **NOT** belong to the arrow functions.
 
 **Creation phase** and **Execution phase**. Core runs in the code stack.
-Closing browser window, this way we are closing the execution context as well.
+Closing a browser window, this way we are closing the execution context as well.
 
 ### Scope and Scope Chaining
 

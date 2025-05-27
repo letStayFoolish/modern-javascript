@@ -38,3 +38,29 @@ Not often mixed `named` and `default` exports within one module.
 ### Top-level Await (ES2022)
 
 In module we can use top-level `await`, without `async` function. That `await` will be blocking the code coming after - acting like synchronous code.
+
+
+### The Module Pattern
+
+```js
+// IFEE
+(function () {
+    const res = "a";
+    
+    console.log(res);
+})(); // "a"
+```
+
+Everything that's in the module is private to very that **module**! Scoped only to that module!
+
+**Closures** allow functions to have access to all variables that were presented at function birthplace.
+
+### CommonJS Module
+
+```js
+// Exporting
+// export.addToCart = function () {};
+
+// Import 
+const { addToCart } = require("./path/file.js");
+```

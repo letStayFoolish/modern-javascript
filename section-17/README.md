@@ -123,7 +123,8 @@ Combining many **pure functions**, avoiding **side effects** and **mutating** da
 
 #### Declarative Syntax
 
-* Use object and array destructuring;
-* Use spread operator (...);
-* Use ternary operators;
+* Use object and array destructuring (`const { a, b } = obj;`; `const [a, b] = arr;`);
+* Use the rest operator (`...`);
+* Use the spread operator (`...`);
+* Use ternary operators (`??`;`? :`);
 * Use template literals.
